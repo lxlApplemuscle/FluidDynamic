@@ -1,0 +1,36 @@
+% !TeX program = xelatex
+\documentclass[cn, twoside]{myModel}
+\TitleName{Geophysical fluid dynamics}
+\basicInformation{AppleMuscle}{lixianlongouc@gmail.com}
+\backgroundName{1564367343.eps}{.7}{.1}
+
+\begin{document}
+	\maketitle
+	%\centerline{\heiti{\zihao{1}{example title}}\vspace{1em}}
+	\begin{cnabstract}
+		\par{}main introduction of the article
+	\end{cnabstract}
+	\vspace{-2em}
+	\section{test}
+		\par{}海洋微波传感器（Microwave Sensors for Oceanography）广泛应用于海洋环境监测。它们主要分类为被动微波传感器（如辐射计）和主动微波传感器（如雷达）。这些传感器可以探测多种海洋环境参数，依赖于不同的物理原理。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.6\textwidth]{1564367343.eps}
+			\caption{辐射计示意图}
+			\label{pic1}
+		\end{figure}
+		\begin{lstlisting}[language=python,numbers=none]
+import numpy as np # import python lib
+Data = np.empty([10, 100, 1000])
+		\end{lstlisting}
+		\begin{box1}{This is a Fancy Box}
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin viverra massa rutrum felis vulputate, ac faucibus velit accumsan. Vivamus aliquet felis nec interdum sollicitudin. Nullam ornare eu velit id cursus. Maecenas a sodales velit, vel cursus magna. Cras lobortis venenatis.
+		\end{box1}
+		\begin{box2}{This is a Notice Box}
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin viverra massa rutrum felis vulputate, \mybox[green]{ac faucibus velit accumsan.} Vivamus aliquet felis nec interdum sollicitudin. Nullam ornare eu velit id cursus. Maecenas a sodales velit, vel cursus magna. Cras lobortis venenatis.
+		\end{box2}
+	
+\end{document}
+
+
+
