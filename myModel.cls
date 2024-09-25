@@ -8,7 +8,7 @@
 \DeclareOption{en}{\langentrue}
 
 %% Class and Options
-\def\@@ptsize{10pt} % font size
+\def\@@ptsize{12pt} % font size
 \DeclareOption{9pt}{\def\@@ptsize{9pt}}
 \DeclareOption{10pt}{\def\@@ptsize{10pt}}
 \DeclareOption{11pt}{\def\@@ptsize{11pt}}
@@ -82,7 +82,7 @@
 	{\Large\bfseries}% <format>
 	{}% <label>
 	{0pt}% <sep>
-	{\boxedsection{\sectionheadname{} \thesection:}{#1}{0.33em}}% <before-code>\titleformat{name=\section,numberless}% <command>
+	{\boxedsection{\sectionheadname{} {\Roman{section}}}{#1}{0.33em}}% <before-code>\titleformat{name=\section,numberless}% <command>
 	[%
 	\vspace{-2.2\baselineskip}\hfill
 	]% <after-code>
@@ -157,9 +157,9 @@
 	boxrule = 0pt, bottomrule = 0pt, toprule = 0pt}
 
 % setting abstract
-\newcommand{\cnAbstractname}{\Large\textbf{Commonly used Formulas}}
+\newcommand{\cnAbstractname}{\LARGE\textbf{Commonly used Formulas}}
 \newenvironment{cnabstract}{%
-	\par\normalsize
+	\par\large
 	\noindent\mbox{}\hfill{\heiti\Large\cnAbstractname}\hfill\mbox{}\par{}\vspace{0.5em}}{}
 
 %% Header and Footer
@@ -171,7 +171,7 @@
 \if\@twoside0
 \lhead{
 	\fontfamily{LinuxLibertineT-OsF}\selectfont
-	\textsc{Machine Learning}}
+	\textsc{\@myTitle}}
 \rhead{\thepage}
 \renewcommand\headrule{\vspace{-0.7em}\tikzrule[BrickRed, path fading=east]{.5\textwidth}{0.3mm}}
 \else
@@ -184,12 +184,12 @@
 	\fi}
 \fancyhead[LO]{
 	\fontfamily{LinuxLibertineT-OsF}\selectfont
-	\textsc{Machine Learning Test }
+	\textsc{\@myTitle }
 	\renewcommand\headrule{\vspace{-0.7em}\tikzrule[BrickRed, path fading=east]{.5\textwidth}{0.3mm}}
 }
 \fancyhead[RE]{
 	\fontfamily{LinuxLibertineT-OsF}\selectfont
-	\textsc{Machine Learning }
+	\textsc{\@myTitle }
 }
 \fancyhead[LE,RO]{\thepage}
 \fi

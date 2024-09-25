@@ -6,31 +6,363 @@
 
 \begin{document}
 	\maketitle
-	%\centerline{\heiti{\zihao{1}{example title}}\vspace{1em}}
 	\begin{cnabstract}
-		\par{}main introduction of the article
+		\par{}\noindent{}\textcolor{blue!70!black}{\textbf{各种坐标系中的矢量算子}}
+		\begin{itemize}
+			\item
+			Cartesian coordinate system(x, y, z):
+			\begin{itemize}
+				\item[]
+				\textbf{Gradient} $\nabla\psi=\frac{\partial \psi}{\partial x}\boldsymbol{i}+\frac{\partial \psi}{\partial y}\boldsymbol{j}+\frac{\partial \psi}{\partial z}\boldsymbol{k}$ \quad
+				\textbf{Divergence} $\nabla\cdot\overrightarrow{V}=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}$\\
+				\textbf{Rotation} $\nabla\times\overrightarrow{V}=(\frac{\partial w}{\partial y}-\frac{\partial v}{\partial z})\boldsymbol{i}+(\frac{\partial u}{\partial z}-\frac{\partial w}{\partial x})\boldsymbol{j}+\textcolor{blue}{(\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y})\boldsymbol{k}}$
+			\end{itemize}
+			\item
+			Cylindrical coordinate system(r, $\theta$, z):
+			\begin{itemize}
+				\item[]
+				\textbf{Gradient} 
+				$\nabla\psi=\frac{\partial \psi}{\partial r}\boldsymbol{i}+\frac{1}{r}\frac{\partial \psi}{\partial \theta}\boldsymbol{j}+\frac{\partial \psi}{\partial z}\boldsymbol{z}$ \quad
+				\textbf{Divergence} $\nabla\cdot\overrightarrow{V}=\frac{1}{r}\frac{\partial}{\partial r}(ru)+\frac{1}{r}\frac{\partial u}{\partial \theta}$ \\
+				\textbf{Rotation} $\overrightarrow{k}\cdot(\nabla\times\overrightarrow{V})=\frac{1}{r}\frac{\partial}{\partial r}(rv)-\frac{1}{r}\frac{\partial u}{\partial \theta}$ \quad
+				$\nabla^2_{h}\psi=\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial \psi}{\partial r})+\frac{1}{r^2}\frac{\partial^2 \psi}{\partial \theta^2}$
+			\end{itemize}
+			\item
+			Spherical coordinate system($\lambda$, $\varphi$, r):
+			\begin{itemize}
+				\item[]
+				\textbf{Gradient} $\nabla\psi=\frac{\boldsymbol{i}}{r\cos{\varphi}}\frac{\partial \psi}{\partial \lambda}+\frac{\boldsymbol{j}}{r}\frac{\partial \psi}{\partial \varphi}+\boldsymbol{k}\frac{\partial \psi}{\partial r}$ \quad
+				\textbf{Divergence}
+				$\nabla\cdot\overrightarrow{V}=\frac{1}{r\cos{\varphi}}[\frac{\partial u}{\partial \lambda}+\frac{\partial}{\partial \varphi}(v\cos{\varphi})]$ \\
+				\textbf{Rotation}
+				$\overrightarrow{k}\cdot(\nabla\times\overrightarrow{V})=\frac{1}{r\cos{\varphi}}[\frac{\partial v}{\partial \lambda}-\frac{\partial}{\partial \varphi}(u\cos{\varphi})]$ \quad
+				$\nabla^2_{h}\psi=\frac{1}{r\cos^2{\varphi}}[\frac{\partial^2 \psi}{\partial \lambda^2}+\cos{\varphi}\frac{\partial}{\partial \varphi}(cos{\varphi}\frac{\partial psi}{\partial \varphi})]$
+			\end{itemize}
+		\end{itemize}
+		\par{}\noindent{}\textcolor{blue!70!black}{\textbf{积分定理}}
+			\normalsize
+			\begin{itemize}
+				\item[(1)] Divergence theorem \\
+				\begin{minipage}{6cm}
+					\centering
+					{$\displaystyle\int_{V} \nabla\cdot\overrightarrow{A}dV=\displaystyle\int_{\sum} \overrightarrow{A}\cdot\overrightarrow{n}d\sigma$}
+				\end{minipage}
+				\begin{minipage}{9.5cm}
+					\raggedright
+					{
+						式中$dV$为体积元，$V$为体积，$d\sigma$为面积元，$\sum$为包围体积$V$的曲面，$\overrightarrow{n}$为曲面$\sum$的外法线方向上的单位矢量。
+					}
+				\end{minipage} \\ [.5em]
+				\begin{minipage}{6cm}
+					\centering
+					{$\displaystyle\int_{S}\nabla\cdot\overrightarrow{F}dS
+					=\displaystyle\oint_{C} \overrightarrow{F}\cdot\overrightarrow{n}dl$}
+				\end{minipage}
+				\begin{minipage}{9.5cm}
+					\raggedright
+					{
+						式中$\overrightarrow{F}$为二维矢量，$dS$为平面上面积元，$S$为平面面积，$C$为包围$S$的曲线，$dl$为沿着$C$的线元，$\overrightarrow{n}$为曲线$C$的外法线方向上的单位矢量。
+					}
+				\end{minipage}
+				\item[(2)] Stokes' theorem \\
+				\begin{minipage}{6cm}
+					\centering
+					{$\displaystyle\int_{V}\nabla\times\overrightarrow{A}dV
+					 =\displaystyle\int_{\sum}\overrightarrow{n}\times\overrightarrow{A}d\sigma$}\\
+					 {$\displaystyle\int_{S}\overrightarrow{k}\cdot\nabla\times\overrightarrow{F}dS
+					 =\displaystyle\oint_{C}\overrightarrow{F}\cdot\overrightarrow{\tau}dl$} \\
+					 {$\displaystyle\int_{V}\nabla{}adV=\displaystyle\oint_{\sum}a\overrightarrow{n}d\sigma$}
+				\end{minipage}
+				\begin{minipage}{9.5cm}
+					\raggedright
+					{
+						式中$\overrightarrow{k}$是平面$S$的法线方向上的单位矢量，$\overrightarrow{\tau}$是曲线$C$的切线方向上的单位矢量，其他符号同上。
+					}
+				\end{minipage}
+			\end{itemize}
 	\end{cnabstract}
-	\vspace{-2em}
-	\section{test}
-		\par{}海洋微波传感器（Microwave Sensors for Oceanography）广泛应用于海洋环境监测。它们主要分类为被动微波传感器（如辐射计）和主动微波传感器（如雷达）。这些传感器可以探测多种海洋环境参数，依赖于不同的物理原理。
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=.6\textwidth]{1564367343.eps}
-			\caption{辐射计示意图}
-			\label{pic1}
-		\end{figure}
-		\begin{lstlisting}[language=python,numbers=none]
-import numpy as np # import python lib
-Data = np.empty([10, 100, 1000])
-		\end{lstlisting}
-		\begin{box1}{This is a Fancy Box}
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin viverra massa rutrum felis vulputate, ac faucibus velit accumsan. Vivamus aliquet felis nec interdum sollicitudin. Nullam ornare eu velit id cursus. Maecenas a sodales velit, vel cursus magna. Cras lobortis venenatis.
-		\end{box1}
-		\begin{box2}{This is a Notice Box}
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin viverra massa rutrum felis vulputate, \mybox[green]{ac faucibus velit accumsan.} Vivamus aliquet felis nec interdum sollicitudin. Nullam ornare eu velit id cursus. Maecenas a sodales velit, vel cursus magna. Cras lobortis venenatis.
-		\end{box2}
+	
+	\newpage
+	\large
+	\section{基础知识}
+		\subsection{\textcolor{blue!70!black}{基本方程}}
+			\begin{itemize}
+				\item 
+				地转($\Omega=7.3\times10^{-5}ms^{-1}$)\quad 薄层($\frac{H}{L}\ll1$)\quad  
+				层化($\rho\neq{}constant$)
+				\item 基本控制方程：
+				\begin{itemize}
+					\item[]
+					动量方程$\rho(\frac{d\overrightarrow{V}}{dt}+2\overrightarrow{\Omega}\times\overrightarrow{V})=-\nabla{p}-\rho\nabla\Phi+\overrightarrow{F}$
+					$\left(\overrightarrow{F}=\mu\nabla^{2}\overrightarrow{V}+\frac{\mu}{3}\nabla(\nabla\cdot\overrightarrow{V})\right)$ 
+					\item[]
+					连续方程$\frac{dp}{dt}+\rho\nabla\cdot\overrightarrow{V}=0$
+					\item[]
+					状态方程$\left\{
+					\begin{minipage}{14cm}
+						\raggedright
+						$\mbox{海洋}\left\{
+						\begin{minipage}{6cm}
+							\raggedright
+							{$\rho=\rho_{0}[1-\alpha_{T}(T-T_{0})+\alpha_{S}(S-S_{0})]$}\\
+							{$\frac{dT}{dt}=K_{T}\nabla^{2}T+\frac{Q_{H}}{\rho{}C_{v}}$} \\
+							{$\frac{dS}{dt}=K_{S}\nabla^{2}S$}
+						\end{minipage}
+						\right.$ 
+						\begin{minipage}{6cm}
+							\raggedright
+							{$\alpha_{T},\alpha_{S}$为热，盐膨胀系数} \\
+							{$K_{T},K_{S}$为热，盐扩散系数} \\
+							{$Q_{H}$为热源或汇，$C_{v}$为比热}
+						\end{minipage}
+						\\ [.3em]
+						$\mbox{大气}\left\{
+						\begin{minipage}{6cm}
+							\raggedright
+							{$\rho=\frac{p}{RT}$}\\
+							{$\frac{dT}{dt}=\kappa\nabla^{2}T-\frac{Q}{C_{p}}$} 
+						\end{minipage}
+						\right.$
+						\begin{minipage}{6cm}
+							\raggedright
+							{R为干空气气体常数}, {$\kappa$为热扩散率}, {$C_{p}$定压比热}， 
+							{$Q$为加热率}
+						\end{minipage}
+					\end{minipage}
+					\right.$
+				\end{itemize}
+				\item 无粘流体:
+					\begin{itemize}
+						\begin{minipage}{10cm}
+							\raggedright
+							\item[]基本方程
+								$\frac{d\overrightarrow{V}}{dt}=-\frac{V_{p}}{\rho}-2\overrightarrow{\Omega}\times\overrightarrow{v}+\overrightarrow{g}$ 
+							\item[]球坐标($\lambda$, $\theta$, r)
+								\begin{equation*} \normalsize
+									\begin{split}
+										\frac{d\overrightarrow{V}}{dt} & = \left(\frac{du}{dt}-\frac{uv\tan{\theta}}{r}+\frac{uw}{r}\right)\overrightarrow{i} \\
+										&+\left(\frac{dv}{dt}-\frac{u^{2}\tan{\theta}}{r}+\frac{vw}{r}\right)\overrightarrow{j}+\left(\frac{dw}{dt}-\frac{u^{2}+v^{2}}{r}\right)\overrightarrow{k}
+									\end{split}
+								\end{equation*}
+						\end{minipage}
+						\begin{minipage}{5.5cm}
+							\begin{figure}[H]
+								\centering
+								\includegraphics[width=.75\textwidth]{sp_system}
+							\end{figure}
+						\end{minipage}
+						\item[] \small
+							$\large{\mbox{地转角速度}}\left\{
+							\begin{minipage}{15cm}
+								\raggedright
+								{$\overrightarrow{\Omega}=\Omega\cos{\theta}\overrightarrow{j}+\Omega\sin{\theta}\overrightarrow{k}$} \\
+								{$2\overrightarrow{\Omega}\times\overrightarrow{v}=(2\Omega\omega\cos{\theta}-2\Omega{}v\sin{\theta})\overrightarrow{i}+2\Omega{}u\sin{\theta}\overrightarrow{j}-2\Omega{}u\cos{\theta}\overrightarrow{k}$}
+							\end{minipage}
+							\right.$ 
+						\item[] 
+						$\large{\mbox{分量形式为}}\left\{
+						\begin{minipage}{15cm}
+							\raggedright
+							{$\frac{du}{dt}-(2\Omega+\frac{u}{r\cos{\theta}})(v\sin{\theta}-w\cos{\theta})=-\frac{1}{\rho{r}\cos{\theta}}\frac{\partial p}{\partial \lambda}$} \\
+							{$\frac{dv}{dt}+\frac{wv}{r}+(2\Omega+\frac{u}{r\cos{\theta}})u\sin{\theta}=-\frac{1}{\rho{r}}\frac{\partial p}{\partial \theta}$} \\
+							{$\frac{dw}{dt}-\frac{u^2+v^2}{r}-2\Omega{u}\cos{\theta}=-\frac{1}{\rho}\frac{\partial p}{\partial r}-g$}
+						\end{minipage}
+						\right.$ 
+					\end{itemize}
+				\item 动量方程简化为：
+					$\left\{
+					\begin{minipage}{6cm}
+						\raggedright
+						{$\frac{du}{dt}-fv-\frac{uv}{a}\tan{\theta}=-\frac{1}{\rho{a}\cos{\theta}}\frac{\partial p}{\partial \lambda}$} \\
+						{$\frac{dv}{dt}+fu+\frac{u2}{a}\tan{\theta}=-\frac{1}{\rho{a}}\frac{\partial p}{\partial \theta}$} \\
+						{$0=-\frac{1}{\rho}\frac{\partial p}{\partial z}-g$}
+					\end{minipage}
+					\right.$ 
+					\begin{minipage}{8cm}
+						\raggedright 其中：
+						{$\frac{d}{dt}=\frac{\partial}{\partial t}+\frac{u}{a\cos{\theta}}\frac{\partial}{\partial \lambda}+\frac{v}{a}\frac{\partial}{\partial \theta}+w\frac{\partial}{\partial z}$} \\
+						\qquad{$f=2\Omega\sin{\theta}$}(科氏参数)
+					\end{minipage}
+				\item 连续方程为：$\frac{d\rho}{dt}+\rho\left[\frac{1}{a\cos{\theta}}\frac{\partial u}{\partial \lambda}+\frac{1}{a\cos{\theta}}\frac{\partial}{\partial \theta}(v\cos{\theta})+\frac{\partial w}{\partial z}\right]=0$
+			\end{itemize}
+
+		\subsection{\textcolor{blue!70!black}{基本原理}}
+			\begin{itemize}
+				\item \textbf{$f$}平面近似 \\
+				这是对地转参数采用的一种近似，在中纬度地区，可以将$f$作为常数处理。 \\ 
+			 	纬度为$\theta_{0}(\delta{x},\delta{y},\delta{z})\approx(a\cos{\theta_{0}}\delta\lambda, a\delta\theta_{0}, \delta{z})$\quad $f_{0}=2\Omega\sin{\theta_{0}}=constant$ \\ [.5em]简化动力方程
+				$\left\{
+				\begin{minipage}{7cm}
+					\raggedright\large
+					{$\frac{\partial u}{\partial t}+(\overrightarrow{V}\cdot\nabla)u-f_{0}v=-\frac{1}{\rho}\frac{\partial p}{\partial x}$} \\
+					{$\frac{\partial v}{\partial t}+(\overrightarrow{V}\cdot\nabla)v+f_{0}u=-\frac{1}{\rho}\frac{\partial p}{\partial y}$} \\
+					{$\frac{\partial p}{\partial z}=-\rho{g}$}
+				\end{minipage}
+				\right.$ 
+				\begin{minipage}{7cm}
+					\raggedright\large
+					{$\frac{d\overrightarrow{V}}{dt}+\overrightarrow{f_{0}}\times\overrightarrow{V}=-\frac{1}{\rho}\nabla_{z}p$} \\
+					$\frac{d\overrightarrow{V}}{dt}=\frac{\partial \overrightarrow{V}}{\partial t}+(\overrightarrow{V}\cdot\nabla)\overrightarrow{V}$
+				\end{minipage}
+			    \item $\beta$平面近似 \\
+			    流体运动的尺度足够大（或者在赤道附近），要考虑地球曲率的影响；为了即使用直角坐标系，又把$f$随纬度的变化考虑在内，这种近似为$\beta$平面近似: 
+			    $$
+			    f=f_{0}+\beta{}y, \beta=\frac{\partial f}{\partial y}=\frac{\partial(2\Omega\sin{\theta})}{a\partial \theta}=\frac{2\Omega\cos{\theta_{0}}}{a}
+			    $$
+			    \item 静力近似 $\frac{\partial p}{\partial z}=-\rho{g}$ \\
+			    假定 
+			    $p$(x,y,z)=$\overline{p}$(z)+$p^{\prime}$(x,y,z,t),\enspace|$p^{\prime}$|$\ll$$\overline{p}$\quad $\rho$(x,y,z)=$\overline{\rho}$(z)+$\rho^{\prime}$(x,y,z,t),\enspace|$\rho^{\prime}$|$\ll$$\overline{\rho}$ \\
+			    \begin{minipage}{6cm}
+			    	\raggedright
+			    	\begin{equation*}
+			    		\begin{split}
+			    			\frac{\partial(\overline{p}+p^{\prime})}{\partial z}&=-(\overline{\rho}+\rho^{\prime})g \\
+			    			\frac{\partial p^{\prime}}{\partial z}&=-\rho^{\prime}g
+			    		\end{split}
+			    	\end{equation*}
+			    \end{minipage}
+			    \begin{minipage}{8cm}
+			    	\centering
+			    	在静力近似中，可以使用扰动量来代替平均量，将精确度提高两个量级。
+			    \end{minipage} \\ [.3em]
+			    静力近似不适用的情况：
+			    \begin{equation*} 
+			   		\begin{split}
+			   			\frac{dw}{dt}-&2\Omega{u}\cos{theta}=-\frac{1}{\rho}\frac{\partial p}{\partial z}-g \\
+			   			&=-\frac{1}{\overline{\rho}(1+\frac{\rho^{\prime}}{\overline{\rho}})}\frac{\partial (\overline{p}+p^{\prime})}{\partial z}-g\approx-\frac{1}{\overline{\rho}}\frac{\partial p^{\prime}}{\partial z}-\frac{\rho^{\prime}}{\overline{\rho}}g
+			   		\end{split}
+			   	\end{equation*}\\
+			   	由水平动量方程可得：\textcolor{violet!70!black}{$p^{\prime}\sim2\Omega\rho{UL}$}$\Rightarrow$
+			   	\begin{minipage}{5cm}
+			   		\raggedright\Large
+			   		$\frac{2\Omega{u}\cos{\theta}}{\frac{1}{\overline{\rho}}\frac{\partial p^{\prime}}{\partial z}}$$\sim$$\frac{H}{L}\ll1$
+			   	\end{minipage} \\ [.3em]	
+			   	为了满足静力近似，即
+			   	\begin{minipage}{3.4cm}
+			   	\raggedright
+			   		$\frac{dw}{dt}\ll\frac{\rho^{\prime}}{\overline{p}}g:T\sim\frac{L}{U}$
+			   	\end{minipage} $\Rightarrow$
+			   	\begin{minipage}{5cm}
+			   	\raggedright
+			   		\textcolor{blue!70!black}{$W\ll\frac{L\rho^{\prime}}{U\overline{p}}g$}
+			   	\end{minipage}
+			   	\item \textbf{Boussinesq}近似 \\
+			   		在密度变化不大的水体中，除了浮力项中的密度外，其他项的密度可以当作常数。假定
+			   		\begin{minipage}{5.cm}
+			   			\begin{equation*} 
+			   				\begin{split}
+			   					\rho&=\rho_{0}+\partial\rho(x,y,z,t)\\
+			   						&=\textcolor{darkgray}{\rho_{0}+\tilde{\rho}(z)+\rho^{\prime}(x,y,z,t)} \\
+			   						&=\textcolor{darkgray}{\tilde{\rho}(z)+\rho^{\prime}(x,y,z,t)} \\
+			   					p&=\overline{p}+\partial{p}(x,y,z,t)
+			   				\end{split}
+			   			\end{equation*}
+			   		\end{minipage}
+			   		\begin{minipage}{10.5cm}
+			   			\centering
+			   			$\rho_{0}=constant$\quad|$\partial \rho$|,|$\partial \rho$|,|$\rho^{\prime}$|$\ll$$\rho_{0}$\quad |$\partial p$|$\ll$$\tilde{p}$ \\
+			   			\textcolor{blue!70!black}{海洋：$\rho_{0}\cong1000kg/m^{3}$\quad $\tilde{\rho}\cong10kg/m^3$\quad$\rho^{\prime}\cong0.1kg/m^{3}$} \\
+			   			\textcolor{green!30!black}{大气：$\rho_{0}\cong0.5kg/m^{3}$\quad $\tilde{\rho}\cong0.5kg/m^3$\quad$\rho^{\prime}\cong0.005kg/m^{3}$}
+			   		\end{minipage} \\
+			   		带入动量方程可得：
+			   		$$ 
+			   		(\rho_{0}+\partial{\rho})\left(\frac{d\overrightarrow{V}}{dt}+2\Omega\times\overrightarrow{V}\right)=-\nabla\partial{p}-\frac{\partial \overline{p}}{\partial z}\overrightarrow{k}-g(\rho_{0}+\partial \rho)\overrightarrow{k}
+			   		$$
+			   		带入静力近似$\frac{\partial \overrightarrow{p}}{\partial z}$=-$\rho_{0}g$，方程可写为：
+			   		\begin{minipage}{8cm}
+			   			\centering
+			   			$(\rho_{0}+\partial{\rho})\left(\frac{d\overrightarrow{V}}{dt}+2\Omega\times\overrightarrow{V}\right)=-\nabla\partial{p}-g\partial\rho\overrightarrow{k}$
+			   		\end{minipage} \\
+			   		由|$\partial \rho$|$\ll$$\rho_{0}$,\textcolor{red!70!white}{动量方程}进而可写为：
+			   		$$
+			   			\frac{d\overrightarrow{V}}{dt}+2\Omega\times\overrightarrow{V}=-\frac{\nabla\partial p}{\rho_{0}}-\frac{g\partial \rho}{\rho_{0}}\overrightarrow{k}(-\frac{g\partial p}{\rho_{0}}\mbox{为浮力})
+					$$
+			   		连续方程：
+			   		\begin{minipage}{2cm}
+			   			\raggedright
+			   			$\frac{d\rho}{dt}+\rho\nabla\cdot\overrightarrow{V}$
+			   		\end{minipage}\textcolor{red!50!black}{$\Rightarrow$} 
+			   		\begin{minipage}{6cm}
+			   		\raggedright
+			   		$\frac{d\partial\rho}{dt}+(\rho_{0}+\partial \rho)\nabla\cdot\overrightarrow{V}=0$
+			   		\end{minipage} \\
+			   		\mybox[red]{Q:因为$\frac{d}{dt}\sim\nabla\cdot\overrightarrow{V}$，因此又可写成$\nabla\cdot\overrightarrow{V}=0$}
+			   		\item \textbf{Brunt-V$\ddot{a}$is$\ddot{a}$l$\ddot{a}$}频率\\
+			   			不可压缩流体（海洋）：\enspace$\rho=\rho(z)$\\
+			   			流体微团A由$z$升到$z+dz$，$\delta\rho$为流体微团A和它周围的密度差：
+			   			$$\delta\rho=rho_{A}-\rho_{B}=-\frac{\partial \rho}{\partial z}dz$$
+			   			流体微团所受到的恢复力:\enspace$F=-g\delta\rho=g\frac{\partial\rho}{\partial z}dz$,\enspace 由牛顿第二定律可得：
+			   			$$\rho\frac{\partial^2 (dz)}{\partial t^2}-g\frac{\partial\rho}{\partial z}=0\quad\textcolor{red!70!black}{\Longrightarrow}\quad\frac{\partial^2(dz)}{\partial t^2}+N^{2}dz=0\enspace\left(N^2=-\frac{g}{\rho}\frac{\partial \rho}{\partial z}\right)$$
+			   			\begin{itemize}
+			   				\item 当$N^2>0$时，方程的通解为：\enspace$dz(t)=A\cos{Nt}+B\sin{Nt}$
+			   				$$
+			   				When\enspace t=0,\enspace dz(t)=0\quad\textcolor{red!70!black}{\Longrightarrow}\quad A=0\quad\textcolor{red!70!black}{\Longrightarrow}\quad dz(t)=B\sin{Nt}=z_{0}\sin{Nt}
+			   				$$
+			   				该解表明流体微团在平衡高度上下震荡，$z_{0}$时震荡的振幅，其频率即为Brunt-V$\ddot{a}$is$\ddot{a}$l$\ddot{a}$频率或称为浮力频率：\enspace$N=\left[-\frac{g}{\rho_{0}}\frac{\partial \rho}{\partial z}\right]^{1/2}$
+			   				\item 当$N^2<0$时，方程的通解为：\enspace$dz(t)=Ae^{i\sqrt{N^2}t}+Be^{-i\sqrt{N^2}t}$ 
+			   				$$
+			   				When\enspace t=0,\enspace dz(t)=0\quad\textcolor{red!70!black}{\Longrightarrow}\quad A+B=0\quad\textcolor{red!70!black}{\Longrightarrow}\quad dz(t)=B\left(e^{-i\sqrt{N^2}t}-e^{i\sqrt{N^2}t}\right)
+			   				$$
+			   				因为$i\sqrt{N^2}$和$-i\sqrt{N^2}$是实数，该解表明流体微团离平衡高度越来越远。
+			   			\end{itemize}
+			   			可压缩流体（大气）:\enspace$\rho=\rho(z),\enspace p=p(z)$ \\
+			   			流体微团A由$z$升到$z+dz$，它的密度可写为：\enspace$\rho_A+\Delta\rho_A=\rho_A(z)+\frac{\partial \rho}{\partial p}\frac{d\rho}{dz}dz$ \\
+			   			流体微团B的密度为：\enspace$\rho_{B}=\rho_A(z)+\frac{\partial \rho}{\partial z}dz$ 
+			   			\begin{equation*}
+			   				\begin{split}
+			   					&\textcolor{blue!70!black}{
+			   						\delta\rho=\rho_A+\Delta\rho_A-\rho_{B}=\frac{\partial \rho}{\partial p}\frac{dp}{dz}dz-\frac{\partial\rho}{\partial z}dz
+			   					} \\
+			   					\Longrightarrow-&\frac{g\delta\rho}{\rho}=-\frac{g}{\rho}\left(\frac{\partial \rho}{\partial p}\frac{dp}{dz}-\frac{\partial\rho}{\partial z}\right)dz=-N^{2}dz,\enspace N^2=\frac{g}{\rho}\left(\frac{\partial\rho}{\partial p}\frac{dp}{dz}-\frac{\partial\rho}{\partial z}\right)
+			   				\end{split}
+			   			\end{equation*}
+			   			理想大气中$$
+			   			\theta=T\left(\frac{p_0}{p}\right)^\frac{R}{C_p},\enspace\rho=\frac{p}{RT}\quad\Longrightarrow\quad\rho=\frac{p_0}{R\cdot\theta}\left(\frac{p}{p_0}\right)^{\frac{1}{\gamma}},\enspace \mbox{其中}\enspace\gamma=\frac{C_p}{C_v}, C_v=C_p-R 
+			   			$$
+			   			$$
+			   			N^2=\frac{g}{\rho}\left(\frac{\partial \rho}{\partial p}\frac{dp}{dz}-\frac{\partial\rho}{\partial z}\right)=g\textcolor{red!70!black}{\left(\frac{1}{\gamma p}\frac{\partial p}{\partial z}-\frac{1}{\rho}\frac{\partial \rho}{\partial z}\right)}=\textcolor{blue!70!black}{\frac{g}{\theta}\left(\frac{\partial \theta}{\partial z}\right)} 
+			   			$$
+			   			\begin{box1}{\textbf{Prove:}}
+			   				Here we prove:\textcolor{blue!70!black}{$\quad\frac{1}{\gamma p}\frac{\partial p}{\partial z}-\frac{1}{\rho}\frac{\partial \rho}{\partial z}=\frac{1}{\theta}\frac{\partial \theta}{\partial z}$} \\
+			   				Set\textcolor{blue!70!black}{$\frac{\partial F}{\partial z}=F^{\prime}$} and \textcolor{blue!70!black}{$F=f_1f_2$}, then we have: \textcolor{blue!70!black}{$F^{\prime}=f_1^{\prime}f_2+f_2^{\prime}f_1$} and \textcolor{blue!70!black}{$\frac{F^\prime}{F}=\frac{f^{\prime}_1}{f_1}+\frac{f^{\prime}_2}{f_2}$}. \\
+			   				For the formula \textcolor{blue!70!black}{$\rho=\frac{p_0}{R\cdot\theta}\left(\frac{p}{p_0}\right)^{\frac{1}{\gamma}}$}, set\textcolor{blue!70!black}{$F=\rho,\enspace f_1=\frac{1}{\theta},\enspace f2=\frac{p_0}{R}\left(\frac{p}{p_0}\right)^{\frac{1}{\gamma}}$}
+			   				\begin{equation*}
+			   					\textcolor{blue}{\begin{split}
+			   							\frac{1}{rho}\frac{\partial \rho}{\partial z}=\frac{\rho^\prime}{\rho}&=\theta\cdot\left(-\frac{1}{\theta^2}\right)\theta^{\prime}+\left[\frac{p_0}{R}\left(\frac{p}{p_0}\right)^\frac{1}{\gamma}\right]^{-1}\cdot\left[\frac{p_0}{R}\left(\frac{p}{p_0}\right)^\frac{1}{\gamma}\right]^{\prime} \\
+			   							&=-\frac{\theta^{\prime}}{\theta}+\left[\frac{p_0}{R}\left(\frac{p}{p_0}\right)^\frac{1}{\gamma}\right]^{-1}\cdot\frac{1}{\gamma}\frac{p_0}{R}\left(\frac{p}{p_0}\right)^{\frac{1}{\gamma}-1}\cdot\frac{1}{p_0}p^{\prime} \\
+			   							&=-\frac{\theta^{\prime}}{\theta}+\frac{1}{\gamma P}p^{\prime}=-\frac{1}{\theta}\frac{\partial \theta}{\partial z}+\frac{1}{\gamma P}\frac{\partial p}{\partial z}
+			   					\end{split}}
+			   				\end{equation*}
+			   			\end{box1}
+			\item 地转平衡(\textbf{Geostrophic Balance}) \\
+				Rossby Number: $R_{0}\equiv\frac{U^{2}}{L}/fU\equiv\frac{H}{fL}$，旋转时间尺度($\frac{1}{f}$)/平流时间尺度($\frac{L}{U}$)，相对涡度($\frac{U}{L}$)/行星涡度(f)
+				\begin{itemize}
+					\item[] $R_0\ll1$，得到地转平衡方程:\enspace $\overrightarrow{f}\times\overrightarrow{V}=-\frac{1}{\rho}\nabla_{z}p,\enspace\overrightarrow{f}=2\Omega\sin{\theta}\overrightarrow{k}$ \\
+					\begin{minipage}{4.5cm}
+						\centering
+						直角坐标系: \\
+						{$fu_{g}=-\frac{1}{\rho}\frac{\partial p}{\partial y}$\enspace
+						 $fv_{g}= \frac{1}{\rho}\frac{\partial p}{\partial x}$}
+					\end{minipage} 
+					\begin{minipage}{6.5cm}
+						\centering
+						球坐标系: \\
+						{$fu_{g}=-\frac{1}{\rho{a}}\frac{\partial p}{\partial \theta}$\enspace
+							$fv_{g}= \frac{1}{a\rho\cos{\theta}}\frac{\partial p}{\partial \lambda}$}
+					\end{minipage} ($u_g,\enspace v_{g}$)为地转速度
+				
+				
+				\end{itemize}
+				
+				
+			\end{itemize}
+		
+	\section{无粘浅水理论}
+	\section{行星边界层}
+	\section{层结流体中的准地转运动}
+
+
 	
 \end{document}
-
 
 
